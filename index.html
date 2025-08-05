@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="">
 
@@ -62,6 +63,61 @@
     </script>
     <!-- end 自定义设置 -->
 </head>
+
+
+<style>
+/* 按钮容器 */
+.btn-group-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* 居中显示 */
+}
+
+/* 基础按钮样式 */
+.kz-nav-btn {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 20px !important; /* 更大的圆角 */
+    padding: 10px 20px;
+    font-weight: 500;
+    border: none !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1; /* 等宽按钮 */
+    max-width: 200px; /* 最大宽度 */
+    text-align: center;
+    margin-right: 10px; /* 右侧间距 */
+}
+
+/* 最后一个按钮不需要右边距 */
+.kz-nav-btn:last-child {
+    margin-right: 0;
+
+}
+
+/* GitHub按钮 */
+.kz-nav-btn.btn-secondary {
+    background-color: #6c757d !important;
+    color: white !important;
+}
+
+/* 随机图按钮 */
+.kz-nav-btn.btn-success {
+    background-color: #28a745 !important;
+    color: white !important;
+}
+
+/* 悬浮效果 */
+.kz-nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    opacity: 0.9;
+}
+
+/* 点击效果 */
+.kz-nav-btn:active {
+    transform: translateY(1px);
+}
+
+</style>
 
 <body>
     <div class="kz-video">

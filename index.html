@@ -35,20 +35,31 @@
             --music-bg: rgba(106, 17, 203, 0.1);
         }
         
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* 自定义背景图片 */
-            background-image: url('https://i.stardots.io/tubiao/StarDots_2025-08-02T21:16:51.5830Z_0586.webp');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: var(--text-color);
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* 背景图片靠右 */
+    background-image: url('https://i.stardots.io/tubiao/StarDots_2025-08-02T21:16:51.5830Z_0586.webp');
+    background-size: cover;
+    background-position: right center; /* 关键调整：背景图靠右 */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* 内容仍然居中（不改变位置） */
+    align-items: center;
+    padding: 20px;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* 内容容器（保持原样） */
+.content {
+    width: 80%;
+    max-width: 600px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
         
         /* 主卡片容器 */
         .card-container {
@@ -221,6 +232,10 @@
         .随机图-btn {
             background: linear-gradient(45deg, #f12711, #f5af19);
         }
+
+        .音乐-btn {
+            background: linear-gradient(45deg, #0ffffb, #459266);
+        }
         
         .nav-btn i {
             margin-right: 10px;
@@ -317,6 +332,9 @@
                 </a>
                 <a href="https://sjt.zao1598.xyz" class="nav-btn 随机图-btn">
                     <i class="fas fa-随机图"></i> 随机图
+                </a>
+                <a href="https://yy.zao1598.xyz" class="nav-btn 音乐-btn">
+                    <i class="fas fa-音乐"></i> 音乐
                 </a>
             </div>
             

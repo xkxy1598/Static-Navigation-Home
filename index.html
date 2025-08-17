@@ -15,6 +15,7 @@
     
     <link rel="stylesheet" href="./static/style.css?v=1.2.0">
     <link rel="stylesheet" href="./static/APlayer-1.10.1/dist/APlayer.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -66,7 +67,7 @@ body {
             display: flex;
             max-width: 1000px;
             width: 100%;
-            border-radius: 25px;
+            border-radius: 20px;
             backdrop-filter: blur(0px); /* 可选：背景模糊效果 */
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -188,8 +189,6 @@ body {
             line-height: 1.6;
         }
 
-
-
         
         /* 按钮样式 */
         .buttons-container {
@@ -233,7 +232,7 @@ body {
             background: linear-gradient(45deg, #f12711, #f5af19);
         }
 
-         .音乐-btn {
+        .音乐-btn {
             background: linear-gradient(45deg, #0ffffb, #459266);
         }
         
@@ -307,6 +306,29 @@ body {
     </style>
 </head>
 
+<!-- 音乐播放器容器 -->
+<div id="aplayer"></div>
+
+ <script>
+        window.MetingApiHost = 'https://api.zao1598.xyz/api'; // 替换为你的 API
+    </script>
+
+<!-- MetingJS 配置 -->
+<meting-js
+    server="netease" // 音乐服务：网易云 netease 参见 meting api支持的服务
+    type="song" // 歌曲类型：歌单playlist 单首歌曲 song  专辑 album
+    id="30621945" // 歌单ID或歌曲ID或者专辑ID 20173709 29732992
+    mini = true; // mini模式 吸底模式开启后此选项实效 true / false
+    fixed="true" // 吸底模式
+    autoplay="true" // 自动播放
+    volume ="0.5" // 默认音量
+    loop="all" // 音频循环播放, 可选值: 'all', 'one', 'none' ，分别为全部循环，单曲循环，不循环
+    order="random" // 音频循环顺序, 顺序播放： 'list', 随机播放：'random'
+
+>
+</meting-js>
+>
+</meting-js>
 <body>
     <!-- 主卡片容器 -->
     <div class="card-container">

@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
     
-    <link rel="stylesheet" href="./static/style.css?v=1.2.0">
-    <link rel="stylesheet" href="./static/APlayer-1.10.1/dist/APlayer.min.css">
-    
     <style>
         * {
             margin: 0;
@@ -36,31 +33,31 @@
             --music-bg: rgba(106, 17, 203, 0.1);
         }
         
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* 背景图片靠右 */
-    background-image: url('https://i.stardots.io/tubiao/StarDots_2025-08-02T21:16:51.5830Z_0586.webp');
-    background-size: cover;
-    background-position: right center; /* 关键调整：背景图靠左left center 靠右right center 居中center center */
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center; /* 内容仍然居中（不改变位置） */
-    align-items: center;
-    padding: 20px;
-    color: var(--text-color);
-    margin: 0;
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* 背景图片靠右 */
+            background-image: url('https://i.stardots.io/tubiao/StarDots_2025-08-02T21:16:51.5830Z_0586.webp');
+            background-size: cover;
+            background-position: right center; /* 关键调整：背景图靠左left center 靠右right center 居中center center */
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center; /* 内容仍然居中（不改变位置） */
+            align-items: center;
+            padding: 20px;
+            color: var(--text-color);
+            margin: 0;
+        }
 
-/* 内容容器（保持原样） */
-.content {
-    width: 80%;
-    max-width: 600px;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-}
+        /* 内容容器（保持原样） */
+        .content {
+            width: 80%;
+            max-width: 600px;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+        }
         
         /* 主卡片容器 */
         .card-container {
@@ -72,17 +69,13 @@ body {
             overflow: hidden;
             box-shadow: var(--shadow);
             background-color: rgba(255, 255, 255, 0.1);
+            transition: transform var(--transition-speed) ease; /* 添加过渡效果 */
         }
-
 
         .card-container:hover {
             transform: translateY(-10px);
-            transition: transform var(--transition-speed) ease;
         }
-
-
-
-
+        
         /* 左侧照片区域 */
         .photo-section {
             flex: 1;
@@ -303,32 +296,16 @@ body {
             }
         }
 
+        footer {
+            margin-top: auto;
+            padding-top: 20px;
+            color: var(--light-text);
+            font-size: 0.9rem;
+            text-align: center;
+        }
     </style>
 </head>
 
-<!-- 音乐播放器容器 -->
-<div id="aplayer"></div>
-
- <script>
-        window.MetingApiHost = 'https://api.zao1598.xyz/api'; // 替换为你的 API
-    </script>
-
-<!-- MetingJS 配置 -->
-<meting-js
-    server="netease" // 音乐服务：网易云 netease 参见 meting api支持的服务
-    type="song" // 歌曲类型：歌单playlist 单首歌曲 song  专辑 album
-    id="1342611754" // 歌单ID或歌曲ID或者专辑ID 20173709 29732992
-    mini = false; // mini模式 吸底模式开启后此选项实效 true / false
-    fixed="true" // 吸底模式
-    autoplay="true" // 自动播放
-    volume ="0.3" // 默认音量
-    loop="all" // 音频循环播放, 可选值: 'all', 'one', 'none' ，分别为全部循环，单曲循环，不循环
-    order="list" // 音频循环顺序, 顺序播放： 'list', 随机播放：'random'
-
->
-</meting-js>
->
-</meting-js>
 <body>
     <!-- 主卡片容器 -->
     <div class="card-container">
@@ -379,21 +356,42 @@ body {
             </footer>
         </div>
     </div>
-  <!-- aplayer -->
-    <div id="aplayer-fixed" class="aplayer"></div>
+
+    <!-- 音乐播放器 -->
+    <div id="aplayer"></div>
+    
+    <script>
+        // 设置MetingJS API主机
+        window.MetingApiHost = 'https://api.zao1598.xyz/api';
+    </script>
+    
+    <!-- MetingJS 配置 -->
+    <meting-js
+        server="netease"
+        type="song"
+        id="1342611754"
+        fixed="true"
+        autoplay="true"
+        volume="0.3"
+        loop="all"
+        order="list">
+    </meting-js>
+
+    <!-- 脚本文件 -->
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./static/APlayer-1.10.1/dist/APlayer.min.js"></script>
-    <script src="./static/Meting.min.js"></script>
-    <!-- end_aplayer -->
+    <script src="https://cdn.staticfile.org/aplayer/1.10.1/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script defer src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="./static/layer-v3.5.1/layer/layer.js"></script>
 
-    <script src="./static/main.js"></script>
-
-    <script type="text/javascript"> 
-            }); 
-        }); 
-    }); 
+    <script>
+        // 确保音乐播放器正确初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查MetingJS是否已加载
+            if (typeof MetingJSElement !== 'undefined') {
+                console.log('MetingJS已加载');
+            }
+        });
     </script>
+</body>
 </html>
